@@ -1,0 +1,1 @@
+# PatchPilot Frontend\n\nUnderstand any codebase. Find your first contribution.\n\n## Quickstart\n```bash\nnpm install\nnpm run dev\n```\nOpen [http://localhost:3000](http://localhost:3000) in your browser.
