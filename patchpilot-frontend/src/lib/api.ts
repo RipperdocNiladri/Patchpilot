@@ -5,8 +5,9 @@ import {
   RepositoryMeta,
 } from "@/types";
 
-const API_BASE_URL =
+const rawBase =
   process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
+const API_BASE_URL = rawBase.replace(/\/+$/, "");
 
 export interface FileContentResponse {
   path: string;
@@ -53,9 +54,13 @@ async function request<T>(
     if (err instanceof DOMException && err.name === "AbortError") {
       throw err;
     }
+    const isLocal = API_BASE_URL.includes("localhost") || API_BASE_URL.includes("127.0.0.1");
+    const hint = isLocal
+      ? "Please ensure the backend is running locally on port 8000 (npm run dev:backend)."
+      : "Please verify network connectivity and that the deployed backend allows CORS.";
     throw new ApiError(
       0,
-      `Backend connection failed (${API_BASE_URL}). Please ensure the backend is running on port 8000.`
+      `Backend connection failed (${API_BASE_URL}). ${hint}`
     );
   }
 

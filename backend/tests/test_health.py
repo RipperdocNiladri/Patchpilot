@@ -27,3 +27,15 @@ def test_cors_headers(client: TestClient):
     )
     assert response.status_code == 200
     assert response.headers.get("access-control-allow-origin") == "http://localhost:3000"
+
+
+def test_cors_vercel_headers(client: TestClient):
+    response = client.options(
+        "/api/health",
+        headers={
+            "Origin": "https://patchpilot-frontend.vercel.app",
+            "Access-Control-Request-Method": "GET",
+        },
+    )
+    assert response.status_code == 200
+    assert response.headers.get("access-control-allow-origin") == "https://patchpilot-frontend.vercel.app"

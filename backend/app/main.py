@@ -21,12 +21,18 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# CORS configuration restricted to configured frontend origins
+# CORS configuration: allow Vercel deployments, localhost, and configured origins
+if settings.FRONTEND_ORIGIN.strip() == "*":
+    cors_regex = r".*"
+else:
+    cors_regex = r"^(https://.*\.vercel\.app|http://localhost(:\d+)?|http://127\.0\.0\.1(:\d+)?)$"
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins,
+    allow_origin_regex=cors_regex,
     allow_credentials=True,
-    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_methods=["GET", "POST", "OPTIONS", "HEAD"],
     allow_headers=["*"],
 )
 
