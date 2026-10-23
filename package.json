@@ -1,0 +1,16 @@
+{
+  "name": "patchpilot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-Powered Repository Onboarding Mentor for Beginners",
+  "scripts": {
+    "dev": "npm --prefix patchpilot-frontend run dev",
+    "dev:frontend": "npm --prefix patchpilot-frontend run dev",
+    "dev:backend": "powershell -Command \"cd backend; .\\.venv\\Scripts\\python.exe -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000\"",
+    "dev:all": "powershell -Command \"Start-Process powershell -ArgumentList '-NoExit','-Command','cd backend; .\\.venv\\Scripts\\python.exe -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000'; npm --prefix patchpilot-frontend run dev\"",
+    "build": "npm --prefix patchpilot-frontend run build",
+    "start": "npm --prefix patchpilot-frontend run start",
+    "type-check": "npm --prefix patchpilot-frontend run type-check",
+    "test:backend": "powershell -Command \"cd backend; .\\.venv\\Scripts\\python.exe -m pytest tests -v\""
+  }
+}
