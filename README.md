@@ -1,71 +1,8 @@
 # 🚀 PatchPilot
 
-<<<<<<< HEAD
 > **An AI-powered open-source onboarding assistant that makes understanding unfamiliar GitHub repositories easier.**
-=======
-**An AI-powered open-source onboarding assistant that makes understanding unfamiliar GitHub repositories easier.**
->>>>>>> 7f211efb3fdc9d840389475cdbe208039a85306b
 
 PatchPilot helps developers explore repositories, understand code through beginner-friendly AI explanations, ask questions about source files, and discover potential open-source contribution opportunities.
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-- [Next.js](https://nextjs.org/) — React framework for building the web application.
-- [React](https://react.dev/) — Component-based user interface.
-- [TypeScript](https://www.typescriptlang.org/) — Type-safe JavaScript development.
-- [Tailwind CSS](https://tailwindcss.com/) — Utility-first styling for a responsive, modern UI.
-- [Vercel](https://vercel.com/) — Frontend deployment and hosting.
-
-### Backend
-- [Python](https://www.python.org/) — Backend development and AI integration.
-- [FastAPI](https://fastapi.tiangolo.com/) — REST API for connecting the frontend, GitHub data, and AI services.
-- [Pydantic](https://docs.pydantic.dev/) — Request validation and configuration management.
-
-### AI & APIs
-- [Gemma](https://ai.google.dev/gemma) — Google's open Gemma model family, used through a compatible hosted API to generate code explanations and answer repository-related questions.
-- [GitHub REST API](https://docs.github.com/en/rest) — Retrieves repository metadata, file trees, source files, README content, and issue information.
-- [HTTPX](https://www.python-httpx.org/) — Makes asynchronous HTTP requests from the Python backend.
-- *API availability and supported model identifiers depend on the selected provider and deployment configuration.*
-
-### Development & Deployment Tools
-- [Google Antigravity](https://antigravity.google/) — AI-assisted development environment used to help implement, debug, and integrate the frontend and backend.
-- [Stitch](https://stitch.withgoogle.com/) — Assisted with the initial UI/UX design and interface generation.
-- [Git](https://git-scm.com/) and [GitHub](https://github.com/) — Version control and source code management.
-- [Vercel](https://vercel.com/) — Hosting for the Next.js frontend and serverless backend.
-
----
-
-## 🧠 How It Works
-
-1. **Enter a repository**: Provide a public GitHub repository URL.
-2. **Fetch repository data**: The backend uses the GitHub REST API to retrieve relevant project information and source files.
-3. **Analyze with AI**: Relevant code context is sent to the configured Gemma API for explanations and question answering.
-4. **Explore the code**: Read beginner-friendly explanations and investigate important files and functions.
-5. **Find contribution opportunities**: Review potential improvements grounded in repository files, existing issues, documentation, and tests.
-
----
-
-## 🏗️ Architecture
-
-```
-User
- │
- ▼
-Next.js + React + TypeScript (Frontend)
- │
- ▼
-FastAPI Backend (Python)
- │
- ├───► GitHub REST API (Repository data, file trees, source code & issues)
- │
- └───► Gemma API / Google Gen AI (AI code explanations & grounded Q&A)
- │
- ▼
-Results displayed in PatchPilot UI
-```
 
 ---
 
@@ -267,6 +204,8 @@ python -m pytest tests -v
 | `POST` | `/api/analysis/explain` | Beginner-friendly structured code explanation using Gemma |
 | `POST` | `/api/analysis/ask` | Context-grounded Q&A for the active file using Gemma |
 =======
+
+
 All 19 tests verify:
 - Health check and CORS configuration
 - GitHub repository identifier and file path traversal validation
@@ -346,6 +285,3 @@ The project combines AI-assisted development with hands-on configuration, testin
 ## 🎯 Project Goal
 
 The goal of PatchPilot is to lower the barrier to open-source contribution by helping students and beginner developers understand unfamiliar codebases, learn from real-world projects, and identify meaningful ways to contribute.
-
----
->>>>>>> 7f211efb3fdc9d840389475cdbe208039a85306b
