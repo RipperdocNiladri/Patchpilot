@@ -2,7 +2,8 @@
 
 > **An AI-powered open-source onboarding assistant that makes understanding unfamiliar GitHub repositories easier.**
 
-**PatchPilot** is an AI-powered open-source onboarding assistant built with Gemma that helps developers navigate unfamiliar GitHub repositories with confidence. It simplifies complex code through beginner-friendly AI explanations, enables interactive exploration and code-related Q&A, and identifies potential open-source contribution opportunities grounded in real repository evidence—making open source more accessible to everyone, especially beginners.
+PatchPilot is an AI-powered open-source onboarding assistant built with Gemma that helps developers navigate unfamiliar GitHub repositories with confidence. It simplifies complex code through beginner-friendly AI explanations, enables interactive exploration and code-related Q&A, and identifies potential open-source contribution opportunities grounded in real repository evidence—making open source more accessible to everyone, especially beginners.
+
 ---
 
 ## 🛠️ Tech Stack
