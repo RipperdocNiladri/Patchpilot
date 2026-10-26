@@ -382,4 +382,3 @@ The project combines AI-assisted development with hands-on configuration, testin
 ## 🎯 Project Goal
 
 The goal of PatchPilot is to lower the barrier to open-source contribution by helping students and beginner developers understand unfamiliar codebases, learn from real-world projects, and identify meaningful ways to contribute.
->>>>>>> 8c3503977b94805bcfb9f0a4913807f5d84a3ce1
