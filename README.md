@@ -2,6 +2,7 @@
 
 > **An AI-powered open-source onboarding assistant that makes understanding unfamiliar GitHub repositories easier.**
 
+<<<<<<< HEAD
 PatchPilot helps developers explore repositories, understand code through beginner-friendly AI explanations, ask questions about source files, and discover potential open-source contribution opportunities grounded in real repository evidence.
 
 ---
@@ -14,11 +15,15 @@ PatchPilot helps developers explore repositories, understand code through beginn
 - **Grounded File Q&A**: Ask specific questions about any open source file and receive answers strictly grounded in the file's source code with line-level evidence.
 - **First Contribution Finder**: Automatically surface candidate beginner contributions from real open GitHub issues (`good first issue`, `help wanted`, documentation, tests) and in-code `TODO` / `FIXME` notes, complete with safe step-by-step Git workflows.
 - **Built-In Demo Repository**: Explore `fastapi-users/taskflow-api` out of the box with zero external API keys required.
+=======
+PatchPilot is an AI-powered open-source onboarding assistant built with Gemma that helps developers navigate unfamiliar GitHub repositories with confidence. It simplifies complex code through beginner-friendly AI explanations, enables interactive exploration and code-related Q&A, and identifies potential open-source contribution opportunities grounded in real repository evidence—making open source more accessible to everyone, especially beginners.
+>>>>>>> 8c3503977b94805bcfb9f0a4913807f5d84a3ce1
 
 ---
 
 ## 🛠️ Tech Stack
 
+<<<<<<< HEAD
 ### Full-Stack Application (Frontend & Server API)
 - **[Next.js](https://nextjs.org/)** — App Router framework powering both the React UI and full-stack server-side Route Handlers (`/api/*`).
 - **[React](https://react.dev/)** — Component-based user interface.
@@ -50,10 +55,45 @@ PatchPilot helps developers explore repositories, understand code through beginn
 5. **Find contribution opportunities**: Review actionable beginner tasks grounded in open GitHub issues, documentation, tests, and repository `TODO`/`FIXME` comments.
 
 ---
+=======
+### Frontend
+- **[Next.js](https://nextjs.org/)** — React framework for building the web application.
+- **[React](https://react.dev/)** — Component-based user interface.
+- **[TypeScript](https://www.typescriptlang.org/)** — Type-safe JavaScript development.
+- **[Tailwind CSS](https://tailwindcss.com/)** — Utility-first styling for a responsive, modern UI.
+- **[Vercel](https://vercel.com/)** — Frontend deployment and hosting.
+
+### Backend
+- **[Python](https://www.python.org/)** — Backend development and AI integration.
+- **[FastAPI](https://fastapi.tiangolo.com/)** — REST API for connecting the frontend, GitHub data, and AI services.
+- **[Pydantic](https://docs.pydantic.dev/)** — Request validation and configuration management.
+
+### AI & APIs
+- **[Gemma](https://ai.google.dev/gemma)** — Google's open Gemma model family, used through a compatible hosted API to generate code explanations and answer repository-related questions.
+- **[GitHub REST API](https://docs.github.com/en/rest)** — Retrieves repository metadata, file trees, source files, README content, and issue information.
+- **HTTPX** — Makes asynchronous HTTP requests from the Python backend.
+
+*API availability and supported model identifiers depend on the selected provider and deployment configuration.*
+
+### Development & Deployment Tools
+- **[Google Antigravity](https://antigravity.google/)** — AI-assisted development environment used to help implement, debug, and integrate the frontend and backend.
+- **[Stitch](https://stitch.withgoogle.com/)** — Assisted with the initial UI/UX design and interface generation.
+- **[Git](https://git-scm.com/)** and **[GitHub](https://github.com/)** — Version control and source code management.
+- **[Vercel](https://vercel.com/)** — Hosting for the Next.js frontend.
+
+## 🧠 How It Works
+
+1. **Enter a repository:** Provide a public GitHub repository URL.
+2. **Fetch repository data:** The backend uses the GitHub REST API to retrieve relevant project information and source files.
+3. **Analyze with AI:** Relevant code context is sent to the configured Gemma API for explanations and question answering.
+4. **Explore the code:** Read beginner-friendly explanations and investigate important files and functions.
+5. **Find contribution opportunities:** Review potential improvements grounded in repository files, existing issues, documentation, and tests.
+>>>>>>> 8c3503977b94805bcfb9f0a4913807f5d84a3ce1
 
 ## 🏗️ Architecture
 
 ```text
+<<<<<<< HEAD
 User Browser
   │
   ▼
@@ -69,9 +109,25 @@ Next.js Server API Route Handlers (src/app/api/*)
            Structured AI code explanations & grounded file Q&A
   │
   ▼
+=======
+User
+  |
+  v
+Next.js + React + TypeScript
+  |
+  v
+FastAPI Backend (Python)
+  |
+  +------> GitHub REST API
+  |        Repository data and issues
+  |
+  +------> Gemma API
+           AI code explanations and Q&A
+  |
+  v
+>>>>>>> 8c3503977b94805bcfb9f0a4913807f5d84a3ce1
 Results displayed in PatchPilot
 ```
-
 ---
 
 ## 📁 Repository Structure
@@ -149,6 +205,7 @@ Patchpilot/
 
 ---
 
+<<<<<<< HEAD
 ## ⚙️ Environment Variables
 
 Copy `.env.example` to `.env.local` in the project root (`E:\Patchpilot\.env.local`):
@@ -253,3 +310,133 @@ The project combines AI-assisted development with hands-on configuration, testin
 The goal of PatchPilot is to lower the barrier to open-source contribution by helping students and beginner developers understand unfamiliar codebases, learn from real-world projects, and identify meaningful ways to contribute.
 
 *Built for developers who want to understand more, learn faster, and contribute with confidence. 💜*
+=======
+## 💻 Local Development Workflow
+
+### Prerequisites
+- **Python 3.11+**
+- **Node.js 18+** & **npm**
+
+### Quickest Way: Root Single Command
+
+From the project root (`E:\Patchpilot`):
+
+```powershell
+# 1. Install frontend dependencies
+npm --prefix patchpilot-frontend install
+
+# 2. Setup backend virtual environment (one-time)
+cd backend
+python -m venv .venv
+.\.venv\Scripts\pip.exe install -r requirements.txt
+Copy-Item .env.example .env
+cd ..
+
+# 3. Start BOTH Backend and Frontend together:
+npm run dev:all
+```
+
+*Open [http://localhost:3000](http://localhost:3000) in your browser.*
+
+---
+
+### Standard Way: Two Terminals
+
+#### Terminal 1 — Backend (Port 8000)
+```powershell
+cd E:\Patchpilot\backend
+.\.venv\Scripts\Activate.ps1
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+```
+*Health check: [http://127.0.0.1:8000/api/health](http://127.0.0.1:8000/api/health)*
+
+#### Terminal 2 — Frontend (Port 3000)
+```powershell
+cd E:\Patchpilot\patchpilot-frontend
+npm run dev
+```
+*Web App: [http://localhost:3000](http://localhost:3000)*
+
+---
+
+## 🧪 Running Backend Tests
+
+Run the full automated test suite directly with Python:
+
+```powershell
+cd backend
+python -m pytest tests -v
+```
+
+<<<<<<< HEAD
+**20 Automated Tests Covered:**
+- Health check & root endpoints
+- CORS preflight headers for local development and Vercel cloud deployments (`*.vercel.app`)
+- GitHub repository identifier validation and directory traversal protection (`..`, `/`, `\`)
+- Repository overview metadata, recursive tree construction, and file retrieval
+- Gemma AI explanation parsing, structured JSON formatting, and missing key error handling
+- GitHub issue discovery and in-code `TODO`/`FIXME` comment detection
+
+---
+
+## ⚙️ Configuration & Environment Variables
+
+### Backend (`backend/.env` & Vercel Dashboard)
+
+| Variable | Description | Default / Example |
+|---|---|---|
+| `GEMMA_API_KEY` | Google AI Studio API key | *(Optional, enables live AI)* |
+| `GEMMA_MODEL` | Selected model identifier | `gemma-4-26b-a4b-it` |
+| `GITHUB_TOKEN` | Optional GitHub Personal Access Token | *(Increases rate limit from 60 to 5,000/hr)* |
+| `FRONTEND_ORIGIN` | Allowed CORS origins | `http://localhost:3000` *(Auto-allows `*.vercel.app`)* |
+| `HOST` | Backend bind host | `127.0.0.1` (or `0.0.0.0`) |
+| `PORT` | Backend port | `8000` |
+
+### Frontend (`patchpilot-frontend/.env.local` & Vercel Dashboard)
+
+| Variable | Description | Default |
+|---|---|---|
+| `NEXT_PUBLIC_API_BASE_URL` | Base URL of the backend API | `http://localhost:8000` (Local) or `https://backend-three-beta-67.vercel.app` (Cloud) |
+| `NEXT_PUBLIC_APP_ENV` | Environment name | `development` |
+
+---
+
+## 📡 API Endpoints Reference
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/health` | Health check endpoint |
+| `GET` | `/api/repositories/{owner}/{repo}` | Repository overview, stars, forks, accessibility score & start file |
+| `GET` | `/api/repositories/{owner}/{repo}/tree` | Hierarchical file and directory tree |
+| `GET` | `/api/repositories/{owner}/{repo}/files?path=...` | Decoded file content and syntax metadata |
+| `GET` | `/api/repositories/{owner}/{repo}/contributions` | Candidate beginner contribution opportunities |
+| `POST` | `/api/analysis/explain` | Beginner-friendly structured code explanation using Gemma |
+| `POST` | `/api/analysis/ask` | Context-grounded Q&A for the active file using Gemma |
+=======
+
+
+All 19 tests verify:
+- Health check and CORS configuration
+- GitHub repository identifier and file path traversal validation
+- Repository overview metadata, tree construction, and file retrieval
+- Gemma AI explanation parsing, structured outputs, and unconfigured friendly errors
+- Real GitHub issue and in-code TODO contribution opportunity discovery
+
+
+## 🔐 Security
+
+- API credentials are stored in server-side environment variables.
+- Private API keys should never be exposed through `NEXT_PUBLIC_` variables.
+- Repository content is analyzed as data and should never be executed by the application.
+- AI-generated suggestions should be verified against actual repository evidence before being treated as actionable recommendations.
+
+## 🤖 AI-Assisted Development
+
+PatchPilot was developed with assistance from **Google Antigravity**, an AI-assisted development environment. It helped with implementation, code generation, debugging, and integrating different parts of the application.
+
+The project combines AI-assisted development with hands-on configuration, testing, and integration to build a practical developer tool.
+
+## 🎯 Project Goal
+
+The goal of PatchPilot is to lower the barrier to open-source contribution by helping students and beginner developers understand unfamiliar codebases, learn from real-world projects, and identify meaningful ways to contribute.
+>>>>>>> 8c3503977b94805bcfb9f0a4913807f5d84a3ce1
