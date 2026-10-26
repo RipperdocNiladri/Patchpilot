@@ -2,7 +2,6 @@
 
 > **An AI-powered open-source onboarding assistant that makes understanding unfamiliar GitHub repositories easier.**
 
-<<<<<<< HEAD
 PatchPilot helps developers explore repositories, understand code through beginner-friendly AI explanations, ask questions about source files, and discover potential open-source contribution opportunities grounded in real repository evidence.
 
 ---
@@ -15,15 +14,11 @@ PatchPilot helps developers explore repositories, understand code through beginn
 - **Grounded File Q&A**: Ask specific questions about any open source file and receive answers strictly grounded in the file's source code with line-level evidence.
 - **First Contribution Finder**: Automatically surface candidate beginner contributions from real open GitHub issues (`good first issue`, `help wanted`, documentation, tests) and in-code `TODO` / `FIXME` notes, complete with safe step-by-step Git workflows.
 - **Built-In Demo Repository**: Explore `fastapi-users/taskflow-api` out of the box with zero external API keys required.
-=======
-PatchPilot is an AI-powered open-source onboarding assistant built with Gemma that helps developers navigate unfamiliar GitHub repositories with confidence. It simplifies complex code through beginner-friendly AI explanations, enables interactive exploration and code-related Q&A, and identifies potential open-source contribution opportunities grounded in real repository evidence—making open source more accessible to everyone, especially beginners.
->>>>>>> 8c3503977b94805bcfb9f0a4913807f5d84a3ce1
 
 ---
 
 ## 🛠️ Tech Stack
 
-<<<<<<< HEAD
 ### Full-Stack Application (Frontend & Server API)
 - **[Next.js](https://nextjs.org/)** — App Router framework powering both the React UI and full-stack server-side Route Handlers (`/api/*`).
 - **[React](https://react.dev/)** — Component-based user interface.
@@ -55,45 +50,10 @@ PatchPilot is an AI-powered open-source onboarding assistant built with Gemma th
 5. **Find contribution opportunities**: Review actionable beginner tasks grounded in open GitHub issues, documentation, tests, and repository `TODO`/`FIXME` comments.
 
 ---
-=======
-### Frontend
-- **[Next.js](https://nextjs.org/)** — React framework for building the web application.
-- **[React](https://react.dev/)** — Component-based user interface.
-- **[TypeScript](https://www.typescriptlang.org/)** — Type-safe JavaScript development.
-- **[Tailwind CSS](https://tailwindcss.com/)** — Utility-first styling for a responsive, modern UI.
-- **[Vercel](https://vercel.com/)** — Frontend deployment and hosting.
-
-### Backend
-- **[Python](https://www.python.org/)** — Backend development and AI integration.
-- **[FastAPI](https://fastapi.tiangolo.com/)** — REST API for connecting the frontend, GitHub data, and AI services.
-- **[Pydantic](https://docs.pydantic.dev/)** — Request validation and configuration management.
-
-### AI & APIs
-- **[Gemma](https://ai.google.dev/gemma)** — Google's open Gemma model family, used through a compatible hosted API to generate code explanations and answer repository-related questions.
-- **[GitHub REST API](https://docs.github.com/en/rest)** — Retrieves repository metadata, file trees, source files, README content, and issue information.
-- **HTTPX** — Makes asynchronous HTTP requests from the Python backend.
-
-*API availability and supported model identifiers depend on the selected provider and deployment configuration.*
-
-### Development & Deployment Tools
-- **[Google Antigravity](https://antigravity.google/)** — AI-assisted development environment used to help implement, debug, and integrate the frontend and backend.
-- **[Stitch](https://stitch.withgoogle.com/)** — Assisted with the initial UI/UX design and interface generation.
-- **[Git](https://git-scm.com/)** and **[GitHub](https://github.com/)** — Version control and source code management.
-- **[Vercel](https://vercel.com/)** — Hosting for the Next.js frontend.
-
-## 🧠 How It Works
-
-1. **Enter a repository:** Provide a public GitHub repository URL.
-2. **Fetch repository data:** The backend uses the GitHub REST API to retrieve relevant project information and source files.
-3. **Analyze with AI:** Relevant code context is sent to the configured Gemma API for explanations and question answering.
-4. **Explore the code:** Read beginner-friendly explanations and investigate important files and functions.
-5. **Find contribution opportunities:** Review potential improvements grounded in repository files, existing issues, documentation, and tests.
->>>>>>> 8c3503977b94805bcfb9f0a4913807f5d84a3ce1
 
 ## 🏗️ Architecture
 
 ```text
-<<<<<<< HEAD
 User Browser
   │
   ▼
@@ -109,23 +69,6 @@ Next.js Server API Route Handlers (src/app/api/*)
            Structured AI code explanations & grounded file Q&A
   │
   ▼
-=======
-User
-  |
-  v
-Next.js + React + TypeScript
-  |
-  v
-FastAPI Backend (Python)
-  |
-  +------> GitHub REST API
-  |        Repository data and issues
-  |
-  +------> Gemma API
-           AI code explanations and Q&A
-  |
-  v
->>>>>>> 8c3503977b94805bcfb9f0a4913807f5d84a3ce1
 Results displayed in PatchPilot
 ```
 ---
