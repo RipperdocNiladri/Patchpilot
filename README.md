@@ -148,7 +148,6 @@ Patchpilot/
 
 ---
 
-<<<<<<< HEAD
 ## ⚙️ Environment Variables
 
 Copy `.env.example` to `.env.local` in the project root (`E:\Patchpilot\.env.local`):
@@ -253,7 +252,8 @@ The project combines AI-assisted development with hands-on configuration, testin
 The goal of PatchPilot is to lower the barrier to open-source contribution by helping students and beginner developers understand unfamiliar codebases, learn from real-world projects, and identify meaningful ways to contribute.
 
 *Built for developers who want to understand more, learn faster, and contribute with confidence. 💜*
-=======
+
+
 ## 💻 Local Development Workflow
 
 ### Prerequisites
@@ -311,7 +311,6 @@ cd backend
 python -m pytest tests -v
 ```
 
-<<<<<<< HEAD
 **20 Automated Tests Covered:**
 - Health check & root endpoints
 - CORS preflight headers for local development and Vercel cloud deployments (`*.vercel.app`)
@@ -355,7 +354,6 @@ python -m pytest tests -v
 | `GET` | `/api/repositories/{owner}/{repo}/contributions` | Candidate beginner contribution opportunities |
 | `POST` | `/api/analysis/explain` | Beginner-friendly structured code explanation using Gemma |
 | `POST` | `/api/analysis/ask` | Context-grounded Q&A for the active file using Gemma |
-=======
 
 
 All 19 tests verify:
