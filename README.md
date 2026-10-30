@@ -1,3 +1,5 @@
+[![XERJ Corpus Hub contributor](https://hub.xerj.org/contributors/RipperdocNiladri/badge.svg)](https://hub.xerj.org/contributors/RipperdocNiladri)
+
 # 🚀 PatchPilot
 
 > **An AI-powered open-source onboarding assistant that makes understanding unfamiliar GitHub repositories easier.**
